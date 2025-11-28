@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    border: 20px;
+    margin: 20px;
+}
+body{
+    background-color: moccasin;
+    text-emphasis: none;
+    text-size-adjust: initial;
+}
+
+h1{
+    color: red;
+    background-color: wheat;
+    padding: 20px;
+    border: 20px;
+    margin: 20px 40px 20px 10px;
+}
+
+p{
+    text-transform: lowercase;
+    text-overflow: initial;
+    color: white;
+    background-color: black;
+    margin-top: initial;
+}
