@@ -1,0 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulario completo en HTML</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fb;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .field-group {
+      margin-bottom: 1rem;
+    }
+
+    .field-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: #1d3557;
+    }
+
+    .field-group small {
+      display: block;
+      margin-top: 0.2rem;
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+
+    .field-group input[type="text"],
+    .field-group input[type="email"],
+    .field-group input[type="number"],
+    .field-group select,
+    .field-group textarea {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    .field-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .options-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.35rem;
+    }
+
+    .options-inline label {
+      font-weight: 400;
+      color: #0f172a;
+    }
+
+    .options-inline input {
+      margin-right: 0.35rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: flex-end;
+      margin-top: 1.25rem;
+    }
+
+    button {
+      border: none;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      font: inherit;
+      cursor: pointer;
+      transition: filter 0.15s ease;
+    }
+
+    button[type="submit"] {
+      background: #457b9d;
+      color: #ffffff;
+    }
+
+    button[type="reset"] {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    button:hover {
+      filter: brightness(0.95);
+    }
+  </style>
+</head>
+<body>
+  <h1>Formulario de ejemplo</h1>
+
+  <!-- method="get" para que puedas ver los parámetros en la URL -->
+  <form action="" method="get">
+    <!-- Nombre -->
+    <div class="field-group">
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Escribe tu nombre"
+        required
+      />
+    </div>
+
+    <!-- Apellido -->
+    <div class="field-group">
+      <label for="apellido">Apellido</label>
+      <input
+        type="text"
+        id="apellido"
+        name="apellido"
+        placeholder="Escribe tu apellido"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="field-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="ejemplo@correo.com"
+        required
+      />
+      <small>Debe contener un “@” para que el navegador lo considere válido.</small>
+    </div>
+
+    <!-- Edad -->
+    <div class="field-group">
+      <label for="edad">Edad</label>
+      <input
+        type="number"
+        id="edad"
+        name="edad"
+        min="1"
+        max="120"
+        placeholder="Tu edad"
+        required
+      />
+      <small>Solo se aceptan números entre 1 y 120.</small>
+    </div>
+
+    <!-- Género (radio) -->
+    <div class="field-group">
+      <label>Género</label>
+      <div class="options-inline">
+        <label for="genero-f">
+          <input
+            type="radio"
+            id="genero-f"
+            name="genero"
+            value="femenino"
+            required
+          />
+          Femenino
+        </label>
+
+        <label for="genero-m">
+          <input
+            type="radio"
+            id="genero-m"
+            name="genero"
+            value="masculino"
+          />
+          Masculino
+        </label>
+      </div>
+      <small>Solo se puede seleccionar una opción.</small>
+    </div>
+
+    <!-- Música favorita (checkbox) -->
+    <div class="field-group">
+      <label>Género de música favorita</label>
+      <div class="options-inline">
+        <label for="musica-clasica">
+          <input
+            type="checkbox"
+            id="musica-clasica"
+            name="musica"
+            value="clasica"
+          />
+          Clásica
+        </label>
+
+        <label for="musica-jazz">
+          <input
+            type="checkbox"
+            id="musica-jazz"
+            name="musica"
+            value="jazz"
+          />
+          Jazz
+        </label>
+
+        <label for="musica-rock">
+          <input
+            type="checkbox"
+            id="musica-rock"
+            name="musica"
+            value="rock"
+          />
+          Rock
+        </label>
+
+        <label for="musica-pop">
+          <input
+            type="checkbox"
+            id="musica-pop"
+            name="musica"
+            value="pop"
+          />
+          Pop
+        </label>
+      </div>
+      <small>Puedes marcar una o varias opciones.</small>
+    </div>
+
+    <!-- Auto favorito (select) -->
+    <div class="field-group">
+      <label for="auto">Marca de auto favorita</label>
+      <select id="auto" name="auto" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Volvo">Volvo</option>
+        <option value="BMW">BMW</option>
+        <option value="Audi">Audi</option>
+      </select>
+    </div>
+
+    <!-- Comentario (textarea) -->
+    <div class="field-group">
+      <label for="comentario">Comentario</label>
+      <textarea
+        id="comentario"
+        name="comentario"
+        rows="3"
+        cols="30"
+        placeholder="Escribe aquí tu comentario..."
+      ></textarea>
+    </div>
+
+    <!-- Botones -->
+    <div class="buttons">
+      <button type="reset">Limpiar</button>
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+</body>
+</html>
+

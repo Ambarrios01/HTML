@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMULARIO HTML</title>
+  </head>
+  <body>
+    <h1>Formulario Html</h1>
+    <!--  <form novalidate> esta es la forma en la que se requiere para que no se valide la informacion-->
+    <form action="">
+      <label for="Nombre">Nombre:</label>
+      <br />
+      <input
+        type="text"
+        name="Nombre"
+        placeholder="Ingresa tu Nombre"
+        id="Nombre"
+        required="true"
+      /><br />
+      <label for="Apellido">Apellido:</label>
+      <br />
+      <input
+        type="text"
+        name="Apellido"
+        placeholder="Ingresa tu Apellido"
+        id="Apellido"
+        required="true"
+      /><br />
+
+      <label for="Email">Email:</label><br>
+      <input type="email" id="Email" name="Email"  placeholder="Ingresa El correo"><br>
+      <label for="Edad">Edad</label><br>
+      <input type="number" name="Edad" id="Edad" placeholder=" Ingresa Tu Edad" step="any">
+      <br>
+      <input type="submit" value=" Enviar" />
+      <br>
+      <input type="submit" value="Enviar Sin informacion" formnovalidate="formnovalidate">
+        <br>
+      <a href="Formulario.html" ><button form="formnovalidate">Otro Formulario</button></a>
+    </form>
+  </body>
+</html>
